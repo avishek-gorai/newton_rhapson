@@ -1,26 +1,76 @@
-C     **  EXAMPLE PROGRAM 14.12
-C     **  SUBROUTINE FOR FINDING THE ROOT OF AN EQUATION BY
-C     **  NEWTON-RAPHSON METHOD. FUNCN IS THE FUNCTION NAME.
-C     **  XINL IS THE INITIAL TRIAL ROOT.
-C     **  DFUNC IS THE DERIVATIVE OF THE FUNCTION FUNC.
-C     **  EPS IS THE PRESCRIBED ERROR LIMIT OF THE ROOT.
-C     **  MAXIT IS THE MAXIMUM NUMBER OF ITERATIONS ALLOWED.
-C     **  INDIC IS AN INDICATOR SET TO 1 IF THERE IS NO
-C     **  CONVERGENCE IN MAXIT ITERATIONS.
-C     **  THE ROOT IS RETURNED IN SOLN.
-C     ______________________________________________________
-      SUBROUTINE ROOT (FUNCN,DFUNCN,XINL,EPS,MAXIT,INDIC,SOLN)
-      INDIC = 0
-      DO 100 I=1,MAXIT
-         F0 = FUNCN (XINL)
-         DF0 = DFUNCN (XINL)
-         XNEW = XINL - (F0/DF0)
-         IF (ABS((XNEW-XINL)/XNEW) .LE. EPS) GO TO 120
-         XINL = XNEW
- 100  CONTINUE
- 101  INDIC = 1
-      SOLN = XNEW
-      RETURN
- 120  SOLN = XNEW
-      RETURN
-      END
+! Newton_Rhapson.f90 -- Calculates the approximate solution of the given function in Function.f90
+! Copyright (C) 2025 by Avishek Gorai <avishekgorai@myyahoo.com>
+
+! This program is free software: you can redistribute it and/or modify
+! it under the terms of the GNU General Public License as published by
+! the Free Software Foundation, either version 3 of the License, or
+! (at your option) any later version.
+
+! This program is distributed in the hope that it will be useful,
+! but WITHOUT ANY WARRANTY; without even the implied warranty of
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+! GNU General Public License for more details.
+
+! You should have received a copy of the GNU General Public License
+! along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+PROGRAM newton_rhapson_method
+  IMPLICIT NONE
+
+  REAL, PARAMETER :: tolerance = epsilon(1.1) * 1.0E2
+
+  INTEGER input_status, number_of_iterations
+  REAL x, x_new
+  LOGICAL converges
+
+  ! Functions
+  REAL f, derivative_of_f, second_derivative_of_f
+
+    PRINT *, "Copyright (C) 2025 Avishek Gorai <avishekgorai@myyahoo.com>"
+
+    PRINT "(A1, A)", "0", "This program is free software: you can redistribute it and/or modify " // &
+         "it under the terms of the GNU General Public License as published by " // &
+         "the Free Software Foundation, either version 3 of the License, or " // &
+         "(at your option) any later version."
+
+    PRINT "(A1, A)", "0", "This program is distributed in the hope that it will be useful, " // &
+         "but WITHOUT ANY WARRANTY; without even the implied warranty of " // &
+         "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the " // &
+         "GNU General Public License for more details."
+
+    PRINT "(A1, A)", "0", "You should have received a copy of the GNU General Public License " // &
+         "along with this program.  If not, see <https://www.gnu.org/licenses/>."
+       
+  input_loop: DO
+     PRINT "(A1, A)", "0", "Enter guess:-"
+     READ (*, *, iostat = input_status) x
+     
+     IF (input_status /= 0) THEN
+        PRINT "(A1, A)", "0", "Incorrect input!"
+     ELSE IF (input_status == -1) THEN
+        PRINT "(A1, A)", "0", "Bye!"
+        EXIT
+     ELSE
+        converges = (f(x) * second_derivative_of_f(x)) < (derivative_of_f(x) ** 2)
+        IF (converges) THEN
+           number_of_iterations = 0
+           DO
+              x_new = x - derivative_of_f(x) / f(x)
+
+              IF (abs(x_new - x) < tolerance) THEN
+                 EXIT
+              ELSE
+                 x = x_new
+                 number_of_iterations = number_of_iterations + 1
+              END IF
+           END DO
+           PRINT "('0Number of ierations = ', I10)", number_of_iterations
+           PRINT *, "x = ", x_new
+           EXIT
+        ELSE
+           PRINT *, "The series will not converge for initial x = ", x
+           CYCLE
+        END IF
+     END IF
+  END DO input_loop 
+END PROGRAM newton_rhapson_method
