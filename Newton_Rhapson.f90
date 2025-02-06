@@ -81,7 +81,6 @@ PROGRAM newton_rhapson_method
            PRINT 80
 80         FORMAT ("0", "The series will not converge for the initial value:-")
            PRINT *, x
-           CYCLE
         END IF
      END IF
   END DO input_loop
