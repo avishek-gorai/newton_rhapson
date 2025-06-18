@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="newton_rhapson.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="7"/>
+        <CursorPos X="60" Y="27"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="function.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="given_function.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="16" Y="29"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="18">
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="13" Column="47"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="17" Column="26" TopLine="5"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="12" Column="39" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="18" Column="37" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="16" Column="31" TopLine="6"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="27" Column="37" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="given_function.pas"/>
+        <Caret Line="17" Column="14"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="27" Column="40" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="given_function.pas"/>
+        <Caret Line="23" Column="14" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="27" Column="57" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="given_function.pas"/>
+        <Caret Line="29" Column="14"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="14" Column="43" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="27" Column="37" TopLine="6"/>
+      </Position>
+      <Position>
+        <Filename Value="given_function.pas"/>
+        <Caret Line="17" Column="14" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="27" Column="57" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="given_function.pas"/>
+        <Caret Line="23" Column="14" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="27" Column="57" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="28" Column="58" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="newton_rhapson.lpr"/>
+        <Caret Line="27" Column="30" TopLine="14"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
